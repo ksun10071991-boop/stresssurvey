@@ -741,8 +741,8 @@ function loadRecordForEditing(record){
 
 /* ===================== EXPORT CSV ===================== */
 function toLocalTime(isoString){
-  const d = new Date(isoString);
-  return d.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
+const d = new Date(isoString);
+return d.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
 }
   function buildCsv(){
   const headers = ["受试者编号","组别","阶段","提交时间", ...QUESTIONS.map(q => q.title)];
