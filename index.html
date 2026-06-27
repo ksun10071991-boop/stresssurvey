@@ -750,7 +750,7 @@ return d.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
     .slice()
     .sort((a,b) => a.subjectId.localeCompare(b.subjectId) || a.group.localeCompare(b.group) || a.stage.localeCompare(b.stage))
     .map(r => [
-      r.subjectId, r.group, r.stage, r.submittedAt,
+      r.subjectId, r.group, r.stage, toLocalTime(r.submittedAt),
       ...QUESTIONS.map(q => answerDisplay(q, r.answers[q.id]) ?? "")
     ]);
   const escape = (val, isId) => {
